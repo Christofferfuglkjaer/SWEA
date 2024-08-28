@@ -45,12 +45,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Player getPlayerInTurn() {
-    if (turnNumber % 2 == 0) {
-      return Player.FINDUS;
-    }
-    else {
-      return Player.PEDDERSEN;
-    }
+    return turnNumber % 2 == 0 ? Player.FINDUS : Player.PEDDERSEN;
   } // Fake-it
 
   @Override
