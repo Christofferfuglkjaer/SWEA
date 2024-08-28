@@ -88,10 +88,18 @@ public class TestAlphaStone {
     // And these are ordered Tres, Dos, Uno in slot 0,1,2
 
     // When I pick card 0
-    Card card = game.getCardInHand(Player.FINDUS, 0);
+    // Card card = game.getCardInHand(Player.FINDUS, 0);
     // Then is it Tres
     // ENABLE TO START TDD'ing
     // assertThat(card.getName(), is(GameConstants.TRES_CARD));
+  }
+
+  @Test
+  public void shouldChangePlayerOnEndTurn() {
+
+    assertThat(game.getPlayerInTurn(), is(Player.FINDUS));
+    game.endTurn();
+    assertThat(game.getPlayerInTurn(), is(Player.PEDDERSEN));
   }
 
   /** REMOVE ME. Not a test of HotStone, just an example of the
