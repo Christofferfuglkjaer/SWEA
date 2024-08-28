@@ -30,17 +30,13 @@ package hotstone.standard;
  *      Aarhus University
  */
 
-import hotstone.framework.Card;
-import hotstone.framework.Player;
-import org.junit.jupiter.api.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import hotstone.framework.Game;
+import hotstone.framework.Player;
 
 /** Template for your own ongoing TDD process.
  * Fill it out until you have covered all
@@ -103,35 +99,9 @@ public class TestAlphaStone {
     System.out.println("Test player change Ok👍");
   }
 
-  /** REMOVE ME. Not a test of HotStone, just an example of the
-   matchers that the hamcrest library has... */
   @Test
-  public void shouldDefinitelyBeRemoved() {
-    // Matching null and not null values
-    // 'is' require an exact match
-    // Hamcrest uses the 'equals()' method
-    String s = null;
-    assertThat(s, is(nullValue()));
-    s = "Ok";
-    assertThat(s, is(notNullValue()));
-    assertThat(s, is("Ok"));
-
-    // If you only validate substrings, use containsString
-    assertThat("This is a dummy test", containsString("dummy"));
-
-    // You can use is on any type
-    int answerToLifeUniverseAndEverything = 42;
-    assertThat(answerToLifeUniverseAndEverything, is(42));
-
-    // Match contents of Lists
-    List<String> l = new ArrayList<String>();
-    l.add("Bimse");
-    l.add("Bumse");
-    // Note - ordering is ignored when matching using hasItems
-    assertThat(l, hasItems(new String[] {"Bumse","Bimse"}));
-
-    // Matchers may be combined, like is-not
-    assertThat(l.get(0), is(not("Bumse")));
+  public void shouldHavethrescards() {
+    assertThat(game.getHandSize(Player.FINDUS), is(3));
+    System.out.println("Test starting handsize = 3  Ok👍");
   }
-
 }

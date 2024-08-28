@@ -17,7 +17,11 @@
 
 package hotstone.standard;
 
-import hotstone.framework.*;
+import hotstone.framework.Card;
+import hotstone.framework.Game;
+import hotstone.framework.Hero;
+import hotstone.framework.Player;
+import hotstone.framework.Status;
 
 /** This is the 'temporary test stub' in TDD
  * terms: the initial empty but compilable implementation
