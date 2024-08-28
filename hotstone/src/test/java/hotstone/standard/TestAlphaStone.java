@@ -100,6 +100,7 @@ public class TestAlphaStone {
     assertThat(game.getPlayerInTurn(), is(Player.FINDUS));
     game.endTurn();
     assertThat(game.getPlayerInTurn(), is(Player.PEDDERSEN));
+    System.out.println("Test player change Ok👍");
   }
 
   /** REMOVE ME. Not a test of HotStone, just an example of the
