@@ -4,6 +4,9 @@ import hotstone.framework.Player;
 import hotstone.framework.Card;
 
 public class StandardCard implements Card {
+
+    
+
     public String getName() {
         return null;
     }

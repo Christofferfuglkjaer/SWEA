@@ -47,6 +47,10 @@ import java.util.*;
  */
 public class StandardHotStoneGame implements Game {
   private int turnNumber = 0;
+  Card uno = new StandardCard();
+  Card dos = new StandardCard();
+  Card tres = new StandardCard();
+  private List<Card> hand = Arrays.asList(tres, dos, uno);
 
   @Override
   public Player getPlayerInTurn() {
@@ -80,7 +84,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Iterable<? extends Card> getHand(Player who) {
-    return null;
+    return hand;
   }
 
   @Override
