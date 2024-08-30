@@ -30,14 +30,21 @@ package hotstone.standard;
  *      Aarhus University
  */
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.lang.model.type.ArrayType;
+
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.isA;
 import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import hotstone.framework.Game;
 import hotstone.framework.Player;
-import java.util.*;
 
 /** Template for your own ongoing TDD process.
  * Fill it out until you have covered all
@@ -105,7 +112,10 @@ public class TestAlphaStone {
     assertThat(game.getHandSize(Player.FINDUS), is(3));
     System.out.println("Test starting handsize = 3  Ok👍");
   }
-
+  @test 
+  public void shouldreturnwholehand(){
+    assertThat(game.getHand(Player.FINDUS), is());
+  }
   @Test
   public void startingHandConfigurationForFindus() {
     List<String> check = Arrays.asList("Tres", "Dos", "Uno");
