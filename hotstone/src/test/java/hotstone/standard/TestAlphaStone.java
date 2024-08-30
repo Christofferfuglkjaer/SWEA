@@ -37,6 +37,7 @@ import org.junit.jupiter.api.Test;
 
 import hotstone.framework.Game;
 import hotstone.framework.Player;
+import java.util.*;
 
 /** Template for your own ongoing TDD process.
  * Fill it out until you have covered all
@@ -103,5 +104,16 @@ public class TestAlphaStone {
   public void shouldHavethrescards() {
     assertThat(game.getHandSize(Player.FINDUS), is(3));
     System.out.println("Test starting handsize = 3  Ok👍");
+  }
+
+  @Test
+  public void startingHandConfigurationForFindus() {
+    List<String> check = Arrays.asList("Tres", "Dos", "Uno");
+    int i = 0;
+    while (i <= 2) {
+      assertThat(game.getCardInHand(Player.FINDUS, i), is(check.get(i)));
+      i ++;
+    }
+    System.out.println("Test Findus starting hand = 3  Ok👍");
   }
 }
