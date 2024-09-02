@@ -47,10 +47,10 @@ import java.util.*;
  */
 public class StandardHotStoneGame implements Game {
   private int turnNumber = 0;
-  Card uno = new StandardCard();
-  Card dos = new StandardCard();
-  Card tres = new StandardCard();
-  private List<Card> hand = Arrays.asList(tres, dos, uno);
+  public Card uno = new StandardCard();
+  public Card dos = new StandardCard();
+  public Card tres = new StandardCard();
+  public List<Card> hand = Arrays.asList(tres, dos, uno);
 
   @Override
   public Player getPlayerInTurn() {

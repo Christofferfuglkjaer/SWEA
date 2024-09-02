@@ -100,21 +100,27 @@ public class TestAlphaStone {
 
   @Test
   public void shouldChangePlayerOnEndTurn() {
-
+    // Check that Findus starts the game
     assertThat(game.getPlayerInTurn(), is(Player.FINDUS));
+    // End turn
     game.endTurn();
+    // Check that the player in turn is switched to Peddersen
     assertThat(game.getPlayerInTurn(), is(Player.PEDDERSEN));
     System.out.println("Test player change Ok👍");
   }
 
   @Test
   public void shouldHavethrescards() {
+    // Check that the handsize of Findus is 3 at the start of the game
     assertThat(game.getHandSize(Player.FINDUS), is(3));
     System.out.println("Test starting handsize = 3  Ok👍");
   }
-  @test 
+  @Test 
   public void shouldreturnwholehand(){
-    assertThat(game.getHand(Player.FINDUS), is());
+    // Casts game as standard game, so hand is available
+    StandardHotStoneGame sgame = (StandardHotStoneGame) game;
+    // Check that we are able to return the whole hand
+    assertThat(game.getHand(Player.FINDUS), is(sgame.hand));
   }
   @Test
   public void startingHandConfigurationForFindus() {
