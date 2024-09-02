@@ -48,7 +48,9 @@ import hotstone.framework.Status;
  * why it is not called 'AlphaGame'.
  */
 public class StandardHotStoneGame implements Game {
+  // Initializes turn number
   private int turnNumber = 0;
+  // Intializes cards and hand (FAKE IT)
   public Card uno = new StandardCard(1);
   public Card dos = new StandardCard(2);
   public Card tres = new StandardCard(3);
@@ -56,6 +58,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Player getPlayerInTurn() {
+    // Return Findus if turn number is even, else Peddersen
     return turnNumber % 2 == 0 ? Player.FINDUS : Player.PEDDERSEN;
   }
 
@@ -111,6 +114,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public void endTurn() {
+    // Iterate turn number
    turnNumber ++;
   }
 

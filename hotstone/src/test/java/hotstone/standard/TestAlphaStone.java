@@ -80,7 +80,7 @@ public class TestAlphaStone {
   // and pushing the rest of the cards 1 position
   // 'down'
   @Test
-  public void shouldHaveUnoDosTresCardsInitially() {
+  public void shouldHaveThreeCardsInHandInitially() {
     // Given a game, Findus has 3 cards in hand
     int count = game.getHandSize(Player.FINDUS);
     assertThat(count, is(3));
@@ -104,46 +104,42 @@ public class TestAlphaStone {
     System.out.println("Test player change Ok👍");
   }
 
-  @Test
-  public void shouldHavethrescards() {
-    // Check that the handsize of Findus is 3 at the start of the game
-    assertThat(game.getHandSize(Player.FINDUS), is(3));
-    System.out.println("Test starting handsize = 3  Ok👍");
-  }
   @Test 
-  public void shouldreturnwholehand(){
+  public void shouldReturnWholeHand(){
     // Casts game as standard game, so hand is available
     StandardHotStoneGame sgame = (StandardHotStoneGame) game;
     // Check that we are able to return the whole hand
     assertThat(game.getHand(Player.FINDUS), is(sgame.hand));
   }
+
   @Test
   public void startingHandConfigurationForFindus() {
-
+    // Casts game to StandardHotStoneGame
     StandardHotStoneGame sgame = (StandardHotStoneGame) game;
-
+    // Takes starting hand
     List<Card> check = sgame.hand;
     int i = 0;
+    // For each card in hand
     while (i <= 2) {
+      // Check it is the correct card
       assertThat(game.getCardInHand(Player.FINDUS, i), is(check.get(i)));
+      // Print card
       System.out.println(sgame.getCardInHand(Player.FINDUS, i));
+      // Iterate i
       i ++;
     }
   }
+
   @Test
-  public void shouldreturncardname(){
-
+  public void shouldReturnCardName(){
+    // Initialize check card
     Card dos = new StandardCard(2);
-
+    // Check name
     assertThat(dos.getName(), is("Dos"));
-
+    // Check other values
     assertThat(dos.getAttack(), is(2));
     assertThat(dos.getHealth(), is(2));
     assertThat(dos.getManaCost(), is(2));
-
-
-
-
   }
 
 

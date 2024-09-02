@@ -5,7 +5,7 @@ import hotstone.framework.Player;
 import java.util.*;
 
 public class StandardCard implements Card {
-
+    // Initialize variables
     private String name;
     private int manaCost;
     private int attack;
@@ -15,6 +15,7 @@ public class StandardCard implements Card {
     private String effect;
 
     public StandardCard(int i){
+        // Pull card info from CardConstants
         CardConstants cc = new CardConstants();
         List<Object> cardInfo = cc.getCardInfo(i);
         this.name = (String) cardInfo.get(0);
