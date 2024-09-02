@@ -1,14 +1,19 @@
 package hotstone.standard;
 
-import hotstone.framework.Player;
 import hotstone.framework.Card;
+import hotstone.framework.Player;
 
 public class StandardCard implements Card {
 
-    
-
+    public StandardCard(String card){
+        int health;
+        int mana;
+        int attack; 
+        String name; 
+    }
     public String getName() {
-        return null;
+        Object card;
+        return card.name;
     }
 
     public int getManaCost() {

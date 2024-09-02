@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hotstone.standard.TestAlphaStone" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-08-28T11:38:11" hostname="mbptilhstoffer2.eduroam.net.au.dk" time="0.021">
+<testsuite name="hotstone.standard.TestAlphaStone" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-09-02T08:11:16" hostname="mbptilhstoffer2.eduroam.net.au.dk" time="0.022">
   <properties/>
-  <testcase name="shouldDefinitelyBeRemoved()" classname="hotstone.standard.TestAlphaStone" time="0.013"/>
-  <testcase name="shouldHaveFindusAsFirstPlayer()" classname="hotstone.standard.TestAlphaStone" time="0.001"/>
-  <testcase name="shouldHavethrescards()" classname="hotstone.standard.TestAlphaStone" time="0.003"/>
+  <testcase name="shouldHaveFindusAsFirstPlayer()" classname="hotstone.standard.TestAlphaStone" time="0.011"/>
+  <testcase name="shouldreturnwholehand()" classname="hotstone.standard.TestAlphaStone" time="0.001"/>
+  <testcase name="shouldHavethrescards()" classname="hotstone.standard.TestAlphaStone" time="0.002"/>
   <testcase name="shouldHaveUnoDosTresCardsInitially()" classname="hotstone.standard.TestAlphaStone" time="0.001"/>
-  <testcase name="shouldChangePlayerOnEndTurn()" classname="hotstone.standard.TestAlphaStone" time="0.0"/>
+  <testcase name="startingHandConfigurationForFindus()" classname="hotstone.standard.TestAlphaStone" time="0.0"/>
+  <testcase name="shouldChangePlayerOnEndTurn()" classname="hotstone.standard.TestAlphaStone" time="0.001"/>
   <system-out><![CDATA[Test starting handsize = 3  Ok]]>&#x1f44d;<![CDATA[
+Test Findus starting hand = 3  Ok]]>&#x1f44d;<![CDATA[
 Test player change Ok]]>&#x1f44d;<![CDATA[
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

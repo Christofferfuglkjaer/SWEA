@@ -17,12 +17,14 @@
 
 package hotstone.standard;
 
+import java.util.Arrays;
+import java.util.List;
+
 import hotstone.framework.Card;
 import hotstone.framework.Game;
 import hotstone.framework.Hero;
 import hotstone.framework.Player;
 import hotstone.framework.Status;
-import java.util.*;
 
 /** This is the 'temporary test stub' in TDD
  * terms: the initial empty but compilable implementation
@@ -79,7 +81,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Card getCardInHand(Player who, int indexInHand) {
-    return null;
+    return hand.get(indexInHand);
   }
 
   @Override

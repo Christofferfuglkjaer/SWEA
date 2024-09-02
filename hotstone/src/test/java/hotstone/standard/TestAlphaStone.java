@@ -30,19 +30,14 @@ package hotstone.standard;
  *      Aarhus University
  */
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 
-import javax.lang.model.type.ArrayType;
-
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.isA;
 import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import hotstone.framework.Card;
 import hotstone.framework.Game;
 import hotstone.framework.Player;
 
@@ -124,12 +119,46 @@ public class TestAlphaStone {
   }
   @Test
   public void startingHandConfigurationForFindus() {
-    List<String> check = Arrays.asList("Tres", "Dos", "Uno");
+
+    StandardHotStoneGame sgame = (StandardHotStoneGame) game;
+
+    List<Card> check = sgame.hand;
     int i = 0;
     while (i <= 2) {
       assertThat(game.getCardInHand(Player.FINDUS, i), is(check.get(i)));
+      System.out.println(sgame.getCardInHand(Player.FINDUS, i));
       i ++;
     }
-    System.out.println("Test Findus starting hand = 3  Ok👍");
   }
+  @Test
+  public void shouldreturncardname(){
+
+    Card dos = new StandardCard("Dos");
+
+    assertThat(dos.getName(), is("Dos"));
+
+    assertThat(dos.getAttack(), is(2));
+    assertThat(dos.getHealth(), is(2));
+    assertThat(dos.getManaCost(), is(2));
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
