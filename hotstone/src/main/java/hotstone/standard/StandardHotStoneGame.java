@@ -49,9 +49,9 @@ import hotstone.framework.Status;
  */
 public class StandardHotStoneGame implements Game {
   private int turnNumber = 0;
-  public Card uno = new StandardCard();
-  public Card dos = new StandardCard();
-  public Card tres = new StandardCard();
+  public Card uno = new StandardCard(1);
+  public Card dos = new StandardCard(2);
+  public Card tres = new StandardCard(3);
   public List<Card> hand = Arrays.asList(tres, dos, uno);
 
   @Override

@@ -133,7 +133,7 @@ public class TestAlphaStone {
   @Test
   public void shouldreturncardname(){
 
-    Card dos = new StandardCard("Dos");
+    Card dos = new StandardCard(2);
 
     assertThat(dos.getName(), is("Dos"));
 

@@ -2,43 +2,53 @@ package hotstone.standard;
 
 import hotstone.framework.Card;
 import hotstone.framework.Player;
+import java.util.*;
 
 public class StandardCard implements Card {
 
-    public StandardCard(String card){
-        int health;
-        int mana;
-        int attack; 
-        String name; 
+    private String name;
+    private int manaCost;
+    private int attack;
+    private int health;
+    private boolean active;
+    private Player owner;
+    private String effect;
+
+    public StandardCard(int i){
+        CardConstants cc = new CardConstants();
+        List<Object> cardInfo = cc.getCardInfo(i);
+        this.name = (String) cardInfo.get(0);
+        this.manaCost = (int) cardInfo.get(1);
+        this.attack = (int) cardInfo.get(2);
+        this.health = (int) cardInfo.get(3);
     }
     public String getName() {
-        Object card;
-        return card.name;
+        return name;
     }
 
     public int getManaCost() {
-        return 0;
+        return manaCost;
     }
 
   
     public int getAttack() {
-        return 0;
+        return attack;
     }
 
     public int getHealth() {
-        return 0;
+        return health;
     }
     
     public boolean isActive() {
-        return false;
+        return active;
     }
 
     public Player getOwner() {
-        return null;
+        return owner;
     }
 
     public String getEffectDescription() {
-        return null;
+        return effect;
     }
 
 }
