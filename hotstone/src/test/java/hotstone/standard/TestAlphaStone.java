@@ -40,6 +40,7 @@ import org.junit.jupiter.api.Test;
 import hotstone.framework.Card;
 import hotstone.framework.Game;
 import hotstone.framework.Player;
+import hotstone.framework.Status;
 import hotstone.utility.TestHelper;
 
 /** Template for your own ongoing TDD process.
@@ -156,7 +157,11 @@ public class TestAlphaStone {
     // Check mana reduced by 2
     assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
   }
-
+  @Test
+  public void shouldnotallowbigmanacost() {
+    assertThat(game.playCard(Player.FINDUS, new StandardCard(3), 0), is(Status.NOT_ENOUGH_MANA));
+    TestHelper.printGameState(game);
+  }
 
 
 

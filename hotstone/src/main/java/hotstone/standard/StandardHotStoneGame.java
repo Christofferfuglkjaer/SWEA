@@ -111,7 +111,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Iterable<? extends Card> getField(Player who) {
-    return null;
+    return field;
   }
 
   @Override
@@ -129,9 +129,10 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {
-    // In the future we need to use atIndex to check is it is a legal move.
-    field.add(card);
     StandardHero shero = (StandardHero) getHero(getPlayerInTurn());
+    // In the future we need to use atIndex to check is it is a legal move.
+    if(card.getManaCost() > shero.ManaCount){return Status.NOT_ENOUGH_MANA;}
+    field.add(card);
     shero.ManaCount -= card.getManaCost();
     return Status.OK;
   }

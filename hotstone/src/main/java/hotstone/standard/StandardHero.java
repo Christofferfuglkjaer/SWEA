@@ -1,11 +1,7 @@
 package hotstone.standard;
 
-import hotstone.framework.Player;
 import hotstone.framework.Hero;
-
-import java.util.*;
-
-import hotstone.framework.Game;
+import hotstone.framework.Player;
 
 public class StandardHero implements Hero {
     
@@ -18,39 +14,38 @@ public class StandardHero implements Hero {
     public int getMana() {
         return ManaCount;
     }
-        
 
     /** Get the value of health of this hero.
      *
-     * @return the value of health
+     * 
      */
     public int getHealth() { return 0; }
 
     /** Get the state of the Hero's ability to use
      * his/her hero power. If true, the hero has not
      * yet used the hero power in this turn.
-     * @return true if the hero is able to use the hero power,
+     * true if the hero is able to use the hero power,
      * false otherwise
      */
-    public boolean canUsePower() { return false; }
+    public boolean canUsePower() { return true; }
 
     /** Get the type of the hero. Type is a
      * string value to be open for new hero types.
      * Default hero types are defined in GameConstants.
      *
-     * @return the type of hero
+     * the type of hero
      */
-    public String getType() { return null; }
+    public String getType() { return GameConstants.BABY_HERO_TYPE; }
 
     /** Get the owner of this hero.
      *
-     * @return the player having this hero
+     *  the player having this hero
      */
     public Player getOwner() { return Player.FINDUS; }
 
     /** Get the text describing the hero's power
-     * @return short description of hero power/effect
+     *  short description of hero power/effect
      */
-    public String getEffectDescription() { return null; }
+    public String getEffectDescription() { return "just cute"; }
 
 }
