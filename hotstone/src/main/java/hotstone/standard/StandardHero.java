@@ -9,23 +9,22 @@ import hotstone.framework.Game;
 
 public class StandardHero implements Hero {
     
-    public int ManaCount; 
+    public int ManaCount = 1; 
     
     /** Get the amount of mana this hero has available
      * for playing cards to the field.
     */
 
-    public int getMana(){
-        
+    public int getMana() {
         return ManaCount;
-    };
+    }
         
 
     /** Get the value of health of this hero.
      *
      * @return the value of health
      */
-    public int getHealth(){};
+    public int getHealth() { return 0; }
 
     /** Get the state of the Hero's ability to use
      * his/her hero power. If true, the hero has not
@@ -33,7 +32,7 @@ public class StandardHero implements Hero {
      * @return true if the hero is able to use the hero power,
      * false otherwise
      */
-    public boolean canUsePower(){};
+    public boolean canUsePower() { return false; }
 
     /** Get the type of the hero. Type is a
      * string value to be open for new hero types.
@@ -41,17 +40,17 @@ public class StandardHero implements Hero {
      *
      * @return the type of hero
      */
-    public String getType(){};
+    public String getType() { return null; }
 
     /** Get the owner of this hero.
      *
      * @return the player having this hero
      */
-    public Player getOwner(){};
+    public Player getOwner() { return Player.FINDUS; }
 
     /** Get the text describing the hero's power
      * @return short description of hero power/effect
      */
-    public String getEffectDescription(){};
+    public String getEffectDescription() { return null; }
 
 }

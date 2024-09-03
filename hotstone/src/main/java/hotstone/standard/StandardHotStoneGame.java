@@ -56,6 +56,8 @@ public class StandardHotStoneGame implements Game {
   public Card dos = new StandardCard(2);
   public Card tres = new StandardCard(3);
   public List<Card> hand = Arrays.asList(tres, dos, uno);
+  // Initialize hero
+  public Hero hero = new StandardHero();
 
   @Override
   public Player getPlayerInTurn() {
@@ -65,7 +67,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Hero getHero(Player who) {
-    return null;
+    return hero;
   }
 
   @Override
@@ -117,6 +119,8 @@ public class StandardHotStoneGame implements Game {
   public void endTurn() {
     // Iterate turn number
    turnNumber ++;
+   StandardHero hero = (StandardHero) getHero(getPlayerInTurn());
+   hero.ManaCount = (turnNumber + 2) / 2;
   }
 
   @Override
