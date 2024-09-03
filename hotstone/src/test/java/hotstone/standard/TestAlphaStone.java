@@ -114,9 +114,17 @@ public class TestAlphaStone {
 
   @Test
   public void startingHandConfigurationForFindus() {
+<<<<<<< HEAD
+    // Casts game as standard game, so hand is available
+=======
     // Casts game to StandardHotStoneGame
+>>>>>>> e6c6373f128e008791993e0db7e82f983afc1774
     StandardHotStoneGame sgame = (StandardHotStoneGame) game;
+<<<<<<< HEAD
+    // Checks that the hand Finuds gets, is 
+=======
     // Takes starting hand
+>>>>>>> e6c6373f128e008791993e0db7e82f983afc1774
     List<Card> check = sgame.hand;
     int i = 0;
     // For each card in hand
@@ -129,10 +137,16 @@ public class TestAlphaStone {
       i ++;
     }
   }
+<<<<<<< HEAD
+  @Test
+  public void shouldreturncardname(){
+    //
+=======
 
   @Test
   public void shouldReturnCardName(){
     // Initialize check card
+>>>>>>> e6c6373f128e008791993e0db7e82f983afc1774
     Card dos = new StandardCard(2);
     // Check name
     assertThat(dos.getName(), is("Dos"));
