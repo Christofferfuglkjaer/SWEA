@@ -40,6 +40,7 @@ import org.junit.jupiter.api.Test;
 import hotstone.framework.Card;
 import hotstone.framework.Game;
 import hotstone.framework.Player;
+import hotstone.utility.TestHelper;
 
 /** Template for your own ongoing TDD process.
  * Fill it out until you have covered all
@@ -129,7 +130,7 @@ public class TestAlphaStone {
       i ++;
     }
   }
-  
+
   @Test
   public void shouldReturnCardName(){
     // Initialize check card
@@ -140,6 +141,20 @@ public class TestAlphaStone {
     assertThat(dos.getAttack(), is(2));
     assertThat(dos.getHealth(), is(2));
     assertThat(dos.getManaCost(), is(2));
+  }
+
+  @Test
+  public void shouldReduceAmountOfMana() {
+
+    // Advance to round 3
+    TestHelper.advanceGameNRounds(game, 2);
+    assertThat(game.getTurnNumber(), is(4));
+    // Check hero has 3 mana
+    assertThat(game.getHero(Player.FINDUS).getMana(), is(3));
+    // Play Dos
+    game.playCard(Player.FINDUS, new StandardCard(2), 0);
+    // Check mana reduced by 2
+    assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
   }
 
 
