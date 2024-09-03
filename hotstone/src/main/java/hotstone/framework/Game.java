@@ -17,6 +17,8 @@
 
 package hotstone.framework;
 
+
+
 /** The role of a single HotStone game, allowing clients to access and
  * modify the state of a game.
  * 
