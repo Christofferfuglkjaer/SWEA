@@ -17,14 +17,15 @@
 
 package hotstone.standard;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import hotstone.framework.Card;
 import hotstone.framework.Game;
+import hotstone.framework.Hero;
 import hotstone.framework.Player;
 import hotstone.framework.Status;
-import hotstone.framework.Hero;
 
 
 /** This is the 'temporary test stub' in TDD
@@ -56,6 +57,9 @@ public class StandardHotStoneGame implements Game {
   public Card dos = new StandardCard(2);
   public Card tres = new StandardCard(3);
   public List<Card> hand = Arrays.asList(tres, dos, uno);
+
+  public List<Card> field = new ArrayList<>();
+
   // Initialize hero
   public Hero hero = new StandardHero();
 
@@ -119,13 +123,17 @@ public class StandardHotStoneGame implements Game {
   public void endTurn() {
     // Iterate turn number
    turnNumber ++;
-   StandardHero hero = (StandardHero) getHero(getPlayerInTurn());
-   hero.ManaCount = (turnNumber + 2) / 2;
+   StandardHero shero = (StandardHero) getHero(getPlayerInTurn());
+   shero.ManaCount = (turnNumber + 2) / 2;
   }
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {
-    return null;
+    // In the future we need to use atIndex to check is it is a legal move.
+    field.add(card);
+    StandardHero shero = (StandardHero) getHero(getPlayerInTurn());
+    shero.ManaCount -= card.getManaCost();
+    return Status.OK;
   }
 
   @Override
