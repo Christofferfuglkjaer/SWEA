@@ -66,18 +66,16 @@ public interface Game {
 
   // === Accessors for Hand
 
-  /** Get the card at a given index in the hand.  Index goes from 0 up
-   * till 'getHandSize()-1'.  If a card is added to the hand, it is
-   * put into position 0, all other cards are pushed one position 'to
-   * the right'.  
-   * 
-   * PRECONDITION: 'who' is never null.
-   * PRECONDITION: indexInHand MUST be in interval 0..handsize-1.
+ /** Get the card at a given index on the field.  Index goes from 0
+   * up till 'getFieldSize()-1'.
    *
-   * @param who the player whose hand to inspect
-   * @param indexInHand the index of the card to retrieve. MUST be
-   *                    0..handsize-1.
-   * @return the card in the hand at that position.
+   * PRECONDITION: 'who' is never null.
+   * PRECONDITION: indexInField MUST be in interval 0..fieldsize-1.
+   *
+   * @param who the player whose field to inspect
+   * @param indexInField the index of the card to retrieve. MUST be
+   *                    0..fieldsize-1.
+   * @return the card on the field at that position.
    */
   Card getCardInHand(Player who, int indexInHand);
 
