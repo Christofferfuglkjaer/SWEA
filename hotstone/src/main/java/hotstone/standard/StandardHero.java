@@ -19,7 +19,7 @@ public class StandardHero implements Hero {
      *
      * 
      */
-    public int getHealth() { return 0; }
+    public int getHealth() { return GameConstants.HERO_MAX_HEALTH; }
 
     /** Get the state of the Hero's ability to use
      * his/her hero power. If true, the hero has not
