@@ -8,6 +8,7 @@
 * When game starts Then Findus should have three cards in hand, Tres at index 0, Dos at index 1, and Uno at index 2. [✅]
 * When Peddersen plays Dos, Then the mana available is two less.[✅]
 * field size og hand size[✅].
+test 
 
 
 ### mangler
