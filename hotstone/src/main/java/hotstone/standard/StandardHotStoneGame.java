@@ -101,7 +101,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public int getHandSize(Player who) {
-    return 3;
+    return hand.size();
   } // FAKE-IT
 
   @Override
