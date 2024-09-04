@@ -116,7 +116,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public int getFieldSize(Player who) {
-    return 0;
+    return field.size();
   }
 
   @Override

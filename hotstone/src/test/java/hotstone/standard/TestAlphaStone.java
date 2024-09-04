@@ -54,6 +54,7 @@ public class TestAlphaStone {
   @BeforeEach
   public void setUp() {
     game = new StandardHotStoneGame();
+    TestHelper.printGameState(game);
   }
 
   // Example of an early, simple test case:
@@ -160,9 +161,7 @@ public class TestAlphaStone {
   @Test
   public void shouldnotallowbigmanacost() {
     assertThat(game.playCard(Player.FINDUS, new StandardCard(3), 0), is(Status.NOT_ENOUGH_MANA));
-    TestHelper.printGameState(game);
   }
-
 
 
 
