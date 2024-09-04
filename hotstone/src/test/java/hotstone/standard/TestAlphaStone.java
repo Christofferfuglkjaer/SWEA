@@ -154,10 +154,15 @@ public class TestAlphaStone {
     // Check hero has 3 mana
     assertThat(game.getHero(Player.FINDUS).getMana(), is(3));
     // Play Dos
-    game.playCard(Player.FINDUS, new StandardCard(2), 0);
+    game.playCard(Player.FINDUS, game.getCardInHand(Player.FINDUS, 1), 0);
     // Check mana reduced by 2
     assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
+    // Check hand size = 2
+    assertThat(game.getHandSize(Player.FINDUS), is(2));
+    // Check field size = 1
+    assertThat(game.getFieldSize(Player.FINDUS), is(1));
   }
+
   @Test
   public void shouldnotallowbigmanacost() {
     assertThat(game.playCard(Player.FINDUS, new StandardCard(3), 0), is(Status.NOT_ENOUGH_MANA));

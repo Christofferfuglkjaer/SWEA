@@ -132,6 +132,7 @@ public class StandardHotStoneGame implements Game {
     StandardHero shero = (StandardHero) getHero(getPlayerInTurn());
     // In the future we need to use atIndex to check is it is a legal move.
     if(card.getManaCost() > shero.ManaCount){return Status.NOT_ENOUGH_MANA;}
+    hand.remove(card);
     field.add(card);
     shero.ManaCount -= card.getManaCost();
     return Status.OK;
