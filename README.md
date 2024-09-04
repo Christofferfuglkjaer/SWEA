@@ -1,6 +1,7 @@
 # 1. TDD 
 ## 1.1 TDD status 
 ### lavet 
+
 * Given an initialized game, Then Findus is player in turn [✅]
 * When Findus ends its turn, Then it is Peddersen in turn [✅]
 * Given Card Dos Then it has attributes (2,2,2) [✅]
@@ -15,7 +16,6 @@
 * lavet dæk, og man trækker et kort når modstanderen bruger `end turn`[].
 * man har altid 3 eller mindre mana og 21 hp[].
 * når man ligger et kort i field så fjenes den fra hånden[].
-
 * attack hero og attack card[].
 * use hero power[]. 
 * get winner[]. 
